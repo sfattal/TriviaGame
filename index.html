@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Premier League Trivia</title>
+    <title>Animal Trivia!</title>
     <link rel="icon" type="image/png" href="assets/images/favicon.jpg">
 
     <link rel="stylesheet" href="assets/css/reset.css">
@@ -12,99 +12,12 @@
 </head>
 
 <body>
-    <header><img src="assets/images/header.png" alt="Premier League"></header>
+    <header><h1>Animal Trivia!</h1></header>
 
     <div id="wrapper">
-        <button type="button" id="start-button">Start</button>
-        
-        <div id="quiz">
-            <div id="timer"></div>
-
-            <p class="question">1. Who scored the first ever goal in the Premier League?</p>
-			<ul class="answers">
-			<input type="radio" name="q1" value="a" id="q1a"><label for="q1a">Brian Deane</label><br/>
-			<input type="radio" name="q1" value="b" id="q1b"><label for="q1b">Tony Kotee</label><br/>
-			<input type="radio" name="q1" value="c" id="q1c"><label for="q1c">Eric Cantona</label><br/>
-			<input type="radio" name="q1" value="d" id="q1d"><label for="q1d">Paul Merson</label><br/>
-			</ul>
-			
-			<p class="question">2. Who was the top scorer in the first Premier League season?</p>
-			<ul class="answers">
-			<input type="radio" name="q2" value="a" id="q2a"><label for="q2a">Teddy Sheringham</label><br/>
-			<input type="radio" name="q2" value="b" id="q2b"><label for="q2b">Dean Holdsworth</label><br/>
-			<input type="radio" name="q2" value="c" id="q2c"><label for="q2c">Alan Shearer</label><br/>
-			<input type="radio" name="q2" value="d" id="q2d"><label for="q2d">Les Ferdinand</label><br/>
-			</ul>
-			
-			<p class="question">3. Who reached 100 Premier League goals at the youngest age?</p>
-			<ul class="answers">
-			<input type="radio" name="q3" value="a" id="q3a"><label for="q3a">Romelu Lukaku</label><br/>
-			<input type="radio" name="q3" value="b" id="q3b"><label for="q3b">Robbie Fowler</label><br/>
-			<input type="radio" name="q3" value="c" id="q3c"><label for="q3c">Wayne Rooney</label><br/>
-			<input type="radio" name="q3" value="d" id="q3d"><label for="q3d">Michael Owen</label><br/>
-			</ul>
-			
-			<p class="question">4. Who scored the infamous "beach-ball goal" against Liverpool in 2009?</p>
-			<ul class="answers">
-			<input type="radio" name="q4" value="a" id="q4a"><label for="q4a">Sheffield United</label><br/>
-			<input type="radio" name="q4" value="b" id="q4b"><label for="q4b">Sunderland</label><br/>
-			<input type="radio" name="q4" value="c" id="q4c"><label for="q4c">Stoke</label><br/>
-			<input type="radio" name="q4" value="d" id="q4d"><label for="q4d">Southampton</label><br/>
-			</ul>
-			
-			<p class="question">5. Who was the first manager to name a starting XI that did not feature a single British player?</p>
-			<ul class="answers">
-			<input type="radio" name="q5" value="a" id="q5a"><label for="q5a">Roberto Macini, Manchester City</label><br/>
-			<input type="radio" name="q5" value="b" id="q5b"><label for="q5b">Arsene Wenger, Arsenal</label><br/>
-			<input type="radio" name="q5" value="c" id="q5c"><label for="q5c">Gianluca Vialli, Chelsea</label><br/>
-			<input type="radio" name="q5" value="d" id="q5d"><label for="q5d">Gerard Houllier, Liverpool</label><br/>
-            </ul>
-            <p class="question">6. Man City needed a 94th-minute goal from Sergio Aguero to win the title in 2011-12. Who did they beat?</p>
-			<ul class="answers">
-			<input type="radio" name="q6" value="a" id="q6a"><label for="q6a">Sunderland</label><br/>
-			<input type="radio" name="q6" value="b" id="q6b"><label for="q6b">Queens Park Rangers</label><br/>
-			<input type="radio" name="q6" value="c" id="q6c"><label for="q6c">Reading</label><br/>
-			<input type="radio" name="q6" value="d" id="q6d"><label for="q6d">Aston Villa</label><br/>
-			</ul>
-			
-			<p class="question">7. Who are the only team ever to be 4-0 up a half-time and fail to win?</p>
-			<ul class="answers">
-			<input type="radio" name="q7" value="a" id="q7a"><label for="q7a">Tottenham</label><br/>
-			<input type="radio" name="q7" value="b" id="q7b"><label for="q7b">Arsenal</label><br/>
-			<input type="radio" name="q7" value="c" id="q7c"><label for="q7c">Man City</label><br/>
-			<input type="radio" name="q7" value="d" id="q7d"><label for="q7d">Liverpool</label><br/>
-			</ul>
-			
-			<p class="question">8. Luis Suarez was given a 10-game ban for biting which Chelsea player?</p>
-			<ul class="answers">
-			<input type="radio" name="q8" value="a" id="q8a"><label for="q8a">Frank Lampard</label><br/>
-			<input type="radio" name="q8" value="b" id="q8b"><label for="q8b">John Terry</label><br/>
-			<input type="radio" name="q8" value="c" id="q8c"><label for="q8c">Branislav Ivanovic</label><br/>
-			<input type="radio" name="q8" value="d" id="q8d"><label for="q8d">Nemanja Matic</label><br/>
-			</ul>
-			
-			<p class="question">9. Peter Schmeichel was the first goalkeeper to score a Premier League goal in October 2011, but which of these goalkeepers has not scored a goal?</p>
-			<ul class="answers">
-			<input type="radio" name="q9" value="a" id="q9a"><label for="q9a">Brad Friedel</label><br/>
-			<input type="radio" name="q9" value="b" id="q9b"><label for="q9b">Paul Robinson</label><br/>
-			<input type="radio" name="q9" value="c" id="q9c"><label for="q9c">Asmir Begovic</label><br/>
-			<input type="radio" name="q9" value="d" id="q9d"><label for="q9d">David James</label><br/>
-			</ul>
-			
-			<p class="question">10. Spurs just missed out on a place in the Champions League on the final day of the 2005-06 season. What was blamed for their failure?</p>
-			<ul class="answers">
-			<input type="radio" name="q10" value="a" id="q10a"><label for="q10a">Fielding an inelgigible playery</label><br/>
-			<input type="radio" name="q10" value="b" id="q10b"><label for="q10b">Five players sent off</label><br/>
-			<input type="radio" name="q10" value="c" id="q10c"><label for="q10c">Lasagne</label><br/>
-			<input type="radio" name="q10" value="d" id="q10d"><label for="q10d">GSol Campbell</label><br/>
-            </ul>
-            
-            <button id="submit">Submit</button>
-        
-            <div id="result"></div>
-
-            <button id="restart">Restart</button>
-        </div>
+        <div id="timer"></div>
+        <div id="quiz"></div>
+        <div id="start"><button id="start-btn">Start</button></div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
