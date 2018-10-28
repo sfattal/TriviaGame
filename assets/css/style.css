@@ -11,7 +11,7 @@ h1 {
     color: white;
     background-color: rgba(0, 0, 0, 0.75);
 }
-#submit-btn, #none {
+#submit-btn, #restart-btn {
     visibility: hidden;
     margin-top: 20px;
 }

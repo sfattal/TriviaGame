@@ -1,6 +1,39 @@
 // Event Listener: Game
 $("#start-btn").on("click", function() {
+    init();
+});
+
+// Event Listener: Submit
+$("#submit-btn").on("click", function() {
+    stop();
+})
+
+//Event Listener: Restart
+$("#restart-btn").on("click", function() {
+    init();
+    timer = 10;
+})
+
+// Global Variables:
+var timer = 10;
+var correct = 0;
+var wrong = 0;
+var submitDiv
+var interval
+
+// Timer:
+function decrement() {
+    timer--
+    $("#timer").text("Time Remaining " + timer);
+    if (timer === 0) {
+        stop();
+    }
+}
+
+// Initialize Game:
+function init() {
     $("#quiz > *:not('.keep')").remove();
+    $("#reset-btn").css("visibility", "hidden");
     $("#timer").text("Time Remaining " + timer);
     interval = setInterval(decrement, 1000);
     if(timer === 0) {
@@ -32,42 +65,16 @@ $("#start-btn").on("click", function() {
                 }
             }
             $("#submit-btn").css("visibility", "visible");
-            // submitDiv = $("<div><button id='submit'>Submit</button></div>");
-            // $("#quiz").append(submitDiv);
         })   
-});
-
-// Event Listener: Submit
-$("#submit-btn").on("click", function() {
-    stop();
-})
-
-//Event Listener: Restart
-// $(restart).on("click", function() {
-//     restart();
-// })
-
-// Global Variables:
-var timer = 10;
-var correct = 0;
-var wrong = 0;
-var submitDiv
-var interval
-
-// Timer:
-function decrement() {
-    timer--
-    $("#timer").text("Time Remaining " + timer);
-    if (timer === 0) {
-        stop();
-    }
 }
 
 // Results Screen:
 function stop() {
-    $("#quiz").empty();
+    $("#questionWindow").empty();
     $("#timer").empty();
     clearInterval(interval);
+    $("#restart-btn").css("visibility", "visible");
+    $("#submit-btn").css("visibility", "hidden");
     var result = $("<h3>Results:</h3>");
     $("#quiz").append(result);
     // Validate Questions:
@@ -85,6 +92,6 @@ function stop() {
     $("#quiz").append(correctAns);
     var wrongAns = $("<div>Wrong: " + wrong + "</div>");
     $("#quiz").append(wrongAns);
-    var restart = $("<button id='restart'>Restart</button>");
-    $("#quiz").append(restart); 
+    // var restart = $("<button id='restart-btn'>Restart</button>");
+    // $("#quiz").append(restart);
 }
