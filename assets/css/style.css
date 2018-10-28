@@ -13,6 +13,7 @@ h1 {
 }
 #submit-btn, #none {
     visibility: hidden;
+    margin-top: 20px;
 }
 #wrapper {
     padding: 50px;
