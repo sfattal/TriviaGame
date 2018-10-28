@@ -4,4 +4,4 @@
 <!-- Once the time runs out, you will automatically see a screen with your results -->
 <!-- From the results screen you can restart for a new set of random questions -->
     
-    <!-- By: Sherif Fattal -->
+<!-- By: Sherif Fattal -->
