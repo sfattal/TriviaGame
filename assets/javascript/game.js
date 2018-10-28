@@ -1,10 +1,10 @@
-// Event Listener:
+// Event Listener: Game
 $("#start-btn").on("click", function() {
     $("#quiz").empty();
     $("#timer").text("Time Remaining " + timer);
     interval = setInterval(decrement, 1000);
     if(timer === 0) {
-        stop()
+        stop();
     }
 
     // Questions API:
@@ -12,16 +12,16 @@ $("#start-btn").on("click", function() {
     $.ajax({
         url: queryURL,
         method: "GET"
-      })
+    })
         .then(function(response) {
             var questionBank = response;
             console.log(response)
             for (var i = 0; i < questionBank.length; i++) {
                 // pulled question and appended to html in a p tag
-                var p = $("<p>" + response[i].text + "<p>");
-                $("#quiz").append(p);
+                var h3 = $("<h3>" + response[i].text + "<h3>");
+                $("#quiz").append(h3);
                 // pulled answer choices and appended each to html in a radio button
-                // each group of answers has a different name (line 25) so that only 1 of 4 can be selected i.e. 1 answer
+                // each group of answers has a different name (line 25) so that only 1 of 4 can be selected at a time
                 var singleSelect = "btn" + i
                 for (j = 0; j < 4; j++) {
                     var radioBtn = $("<input type='radio'>").val(response[i].answers[j].text);
@@ -31,16 +31,27 @@ $("#start-btn").on("click", function() {
                     $("#quiz").append(btnText);
                 }
             }
-            
-        })
-       
+            $("#submit-btn").css("visibility", "visible");
+            // submitDiv = $("<div><button id='submit'>Submit</button></div>");
+            // $("#quiz").append(submitDiv);
+        })   
 });
 
+// Event Listener: Submit
+$("#submit-btn").on("click", function() {
+    stop();
+})
+
+//Event Listener: Restart
+// $(restart).on("click", function() {
+//     restart();
+// })
+
 // Global Variables:
-var timer = 20;
+var timer = 5;
 var correct = 0;
 var wrong = 0;
-var unanswered = 0;
+var submitDiv
 var interval
 
 // Timer:
@@ -61,8 +72,8 @@ function stop() {
     $("#quiz").append(correctAns);
     var wrongAns = $("<div>Wrong: " + wrong + "</div>");
     $("#quiz").append(wrongAns);
-    var unAns = $("<div>Unanswered: " + unanswered + "</div>");
-    $("#quiz").append(unAns);
+    var restart = $("<button id='restart'>Restart</button>");
+    $("#quiz").append(restart);
     clearInterval(interval);
     $("#timer").empty();
 }
