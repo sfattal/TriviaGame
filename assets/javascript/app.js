@@ -11,11 +11,13 @@ $("#submit-btn").on("click", function() {
 //Event Listener: Restart
 $("#restart-btn").on("click", function() {
     init();
-    timer = 10;
+    timer = 60;
+    correct = 0;
+    wrong = 0;
 })
 
 // Global Variables:
-var timer = 10;
+var timer = 60;
 var correct = 0;
 var wrong = 0;
 var submitDiv
@@ -33,7 +35,7 @@ function decrement() {
 // Initialize Game:
 function init() {
     $("#quiz > *:not('.keep')").remove();
-    $("#reset-btn").css("visibility", "hidden");
+    $("#restart-btn").css("visibility", "hidden");
     $("#timer").text("Time Remaining " + timer);
     interval = setInterval(decrement, 1000);
     if(timer === 0) {
@@ -48,7 +50,6 @@ function init() {
     })
         .then(function(response) {
             var questionBank = response;
-            console.log(response)
             for (var i = 0; i < questionBank.length; i++) {
                 // pulled question and appended to html in a p tag
                 var h3 = $("<h3>" + response[i].text + "<h3>");
@@ -70,7 +71,6 @@ function init() {
 
 // Results Screen:
 function stop() {
-    $("#questionWindow").empty();
     $("#timer").empty();
     clearInterval(interval);
     $("#restart-btn").css("visibility", "visible");
@@ -86,12 +86,10 @@ function stop() {
         else if(userChoice === "false") {
             wrong++;
         }
-        console.log(userChoice);
     }
     var correctAns = $("<div>Correct: " + correct + "<div>");
     $("#quiz").append(correctAns);
     var wrongAns = $("<div>Wrong: " + wrong + "</div>");
     $("#quiz").append(wrongAns);
-    // var restart = $("<button id='restart-btn'>Restart</button>");
-    // $("#quiz").append(restart);
+    $("#questionWindow").empty();
 }
