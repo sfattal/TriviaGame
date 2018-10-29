@@ -11,13 +11,13 @@ $("#submit-btn").on("click", function() {
 //Event Listener: Restart
 $("#restart-btn").on("click", function() {
     init();
-    timer = 60;
+    timer = 45;
     correct = 0;
     wrong = 0;
 })
 
 // Global Variables:
-var timer = 60;
+var timer = 45;
 var correct = 0;
 var wrong = 0;
 var submitDiv
